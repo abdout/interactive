@@ -60,12 +60,12 @@ const Profile = async ({ params }: { params: { id: string } }) => {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full h-64 relative">
-              {/* <Image
+              <Image
                 src={user.cover || "/noCover.png"}
                 alt="Cover Photo"
                 fill
                 className="rounded-md object-cover"
-              /> */}
+              />
               <Image
                 src={user.image || "/noAvatar.png"}
                 alt="Profile Avatar"

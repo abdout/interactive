@@ -171,8 +171,10 @@ export const updateProfile = async (payload: {
   work?: string;
   website?: string;
   cover?: string;
+  image?: string;
 }) => {
   const Profile = z.object({
+    image: z.string().optional(),
     cover: z.string().optional(),
     name: z.string().max(60).optional(),
     description: z.string().max(255).optional(),
