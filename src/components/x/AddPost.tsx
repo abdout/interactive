@@ -1,7 +1,5 @@
 "use client";
-
-
-// import { CldUploadWidget } from "next-cloudinary";
+import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import { useState } from "react";
 import AddPostButton from "./AddPostButton";
@@ -56,10 +54,12 @@ const AddPost = () => {
         {/* POST OPTIONS */}
         <div className="flex items-center gap-4 mt-4 text-gray-400 flex-wrap">
           {/* Uncomment and configure the Cloudinary Upload Widget if needed */}
-          {/* <CldUploadWidget
+          <CldUploadWidget
             uploadPreset="social"
             onSuccess={(result, { widget }) => {
+              console.log("Upload Success:", result.info);
               setImg(result.info);
+              console.log("img state:", img);
               widget.close();
             }}
           >
@@ -74,7 +74,7 @@ const AddPost = () => {
                 </div>
               );
             }}
-          </CldUploadWidget> */}
+          </CldUploadWidget>
           <div className="flex items-center gap-2 cursor-pointer">
             <Image src="/addVideo.png" alt="Add Video" width={20} height={20} />
             Video

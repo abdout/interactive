@@ -1,9 +1,7 @@
 // components/x/feed/Feed.tsx
-
 import { auth } from "../../../../auth";
 import Post from "./Post";
 import { db } from "@/lib/db";
-
 
 interface FeedProps {
   userId?: string;

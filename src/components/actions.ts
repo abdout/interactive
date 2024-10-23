@@ -277,6 +277,7 @@ export const addComment = async (postId: string, desc: string) => {
 };
 
 export const addPost = async (formData: FormData, img: string) => {
+  console.log("Received image URL in addPost:", img);
   const desc = formData.get("desc") as string;
 
   const Desc = z.string().min(1).max(255);
@@ -310,6 +311,7 @@ export const addPost = async (formData: FormData, img: string) => {
     console.log(err);
   }
 };
+
 
 export const deletePost = async (postId: string) => {
   const user = await currentUser();
