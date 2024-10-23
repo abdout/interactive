@@ -1,0 +1,652 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; 
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* For medium and larger screens, no need to set overflow-x */
+@media (min-width: 768px) {
+  body {
+  
+  }
+}
+
+
+.rubik {
+  font-family: var(--rubik);
+}
+
+  @layer base {
+    :root {
+      --background: 252 0% 99%; /* Use HSL format for light mode */
+    --foreground: 224 71.4% 4.1%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 224 71.4% 4.1%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 224 71.4% 4.1%;
+
+      --primary: 220.9 39.3% 11%;
+      --primary-foreground: 210 20% 98%;
+
+      --secondary: 220 14.3% 95.9%;
+      --secondary-foreground: 220.9 39.3% 11%;
+
+      --muted: 220 14.3% 95.9%;
+      --muted-foreground: 220 8.9% 46.1%;
+
+      --accent: 220 14.3% 95.9%;
+      --accent-foreground: 220.9 39.3% 11%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 20% 98%;
+
+      --border: 220 13% 91%;
+      --input: 220 13% 91%;
+      --ring: 224 71.4% 4.1%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 224 71.4% 4.1%;
+      --foreground: 210 20% 98%;
+
+      --card: 224 71.4% 4.1%;
+      --card-foreground: 210 20% 98%;
+
+      --popover: 224 71.4% 4.1%;
+      --popover-foreground: 210 20% 98%;
+
+      --primary: 210 20% 98%;
+      --primary-foreground: 220.9 39.3% 11%;
+
+      --secondary: 215 27.9% 16.9%;
+      --secondary-foreground: 210 20% 98%;
+
+      --muted: 215 27.9% 16.9%;
+      --muted-foreground: 217.9 10.6% 64.9%;
+
+      --accent: 215 27.9% 16.9%;
+      --accent-foreground: 210 20% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 20% 98%;
+
+      --border: 215 27.9% 16.9%;
+      --input: 215 27.9% 16.9%;
+      --ring: 216 12.2% 83.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+  .container {
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--textColor);
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
+    
+}
+
+.wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+  
+  @media screen and (max-width: 1536px) {
+    .wrapper {
+      max-width: 1366px;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    .wrapper {
+      max-width: 1024px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      max-width: 768px;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .wrapper {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+  @media screen and (max-width: 640px) {
+    .wrapper {
+      max-width: 100%;
+    }
+  }
+
+  /* Base Typography (Default, Large Screens) */
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* For screens up to 1536px (matching .wrapper max-width: 1366px) */
+@media screen and (max-width: 1536px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+/* For screens up to 1280px (matching .wrapper max-width: 1024px) */
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 17px;
+  }
+
+  h6 {
+    font-size: 13px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/* For screens up to 1024px (matching .wrapper max-width: 768px) */
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
+/* For screens up to 768px (matching .wrapper max-width: 100%) */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
+
+/* For screens up to 640px (matching .wrapper max-width: 100%) */
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+
+  .reveal {
+    opacity: 0.7;
+  }
+  
+  .reveal:hover {
+    opacity: 1;
+  }
+
+  .reveal-less {
+    opacity: 0.8;
+  }
+  
+  .reveal-less:hover {
+    opacity: 1;
+  }
+
+
+@keyframes letter-animation {
+  0% { opacity: 1; }
+  10% { opacity: 0.95; }
+  20% { opacity: 0.9; }
+  30% { opacity: 0.85; }
+  40% { opacity: 0.8; }
+  50% { opacity: 0.75; }
+  60% { opacity: 0.8; }
+  70% { opacity: 0.85; }
+  80% { opacity: 0.9; }
+  90% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+.word-animation span {
+  animation: letter-animation 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.word-animation span:nth-child(1) { --i: 1; }
+.word-animation span:nth-child(2) { --i: 2; }
+.word-animation span:nth-child(3) { --i: 3; }
+.word-animation span:nth-child(4) { --i: 4; }
+.word-animation span:nth-child(5) { --i: 5; }
+.word-animation span:nth-child(6) { --i: 6; }
+
+.rubik {
+  font-family: var(--rubik);
+}
+
+@layer base {
+  :root {
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+.animate-flow {
+  display: flex;
+  width: 200%; /* Adjust according to your needs */
+  animation: flow 30s linear infinite;
+}
+
+.animate-flow:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+
+
+
+
+
+@layer components {
+  .border-animation {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Top Left Border */
+  .group .border-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 1px;
+    background: #fcd34d;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Top Right Border */
+  .group .border-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 1px;
+    background: #fcd34d;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Bottom Left Border */
+  .group .border-animation span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 1px;
+    background: #fcd34d;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Bottom Right Border */
+  .group .border-animation span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1px;
+    background: #fcd34d;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Left Top Border */
+  .group .border-animation .left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 50%;
+    background: #fcd34d;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Left Bottom Border */
+  .group .border-animation .left-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 50%;
+    background: #fcd34d;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Right Top Border */
+  .group .border-animation .right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 50%;
+    background: #fcd34d;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Right Bottom Border */
+  .group .border-animation .right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    height: 50%;
+    background: #fcd34d;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Hover Effects */
+  .group:hover .border-animation::before,
+  .group:hover .border-animation::after,
+  .group:hover .border-animation span::before,
+  .group:hover .border-animation span::after,
+  .group:hover .border-animation .left-top,
+  .group:hover .border-animation .left-bottom,
+  .group:hover .border-animation .right-top,
+  .group:hover .border-animation .right-bottom {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.scroll {
+  animation: appear 1s ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+}
+
+@layer base {
+  @property --color-a {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-b {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-c {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+}
+
+@layer components {
+  .range {
+    appearance: none;
+    width: 100%;
+    background: white;
+    height: 2px;
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--color-b);
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    cursor: pointer;
+  }
+  .range::-moz-range-thumb {
+    appearance: none;
+    background: var(--color-b);
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    cursor: pointer;
+  }
+}
+
+
